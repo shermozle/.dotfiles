@@ -188,6 +188,10 @@ exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 # startup
 exec_always --no-startup-id feh --bg-scale /home/simon/Desktop/desktopbg.png
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id mate-volume-control-applet
+exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id mate-settings-daemon
 
 # Move the current workspace to the next output
 # (effectively toggles when you only have two outputs)
