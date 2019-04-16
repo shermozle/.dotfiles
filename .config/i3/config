@@ -152,14 +152,14 @@ bar {
 	status_command i3status -c ~/.config/i3status |/home/simon/bin/i3status_wrapper.py
 	bindsym button1 exec --no-startup-id gsimplecal
 	colors {
-		background #121d30
-		statusline #ffffff
-		separator #6f7277
-                focused_workspace  #4c7899 #285577 #ffffff
-                active_workspace   #333333 #5f676a #ffffff
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #2f343a #900000 #ffffff
-                binding_mode       #2f343a #900000 #ffffff
+		background #222222
+		statusline #eeeeee
+		separator #666666
+		#                  border  backgr. text
+		focused_workspace  #4c7899 #285577 #ffffff
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #2f343a #900000 #ffffff
 	}
 }
 
