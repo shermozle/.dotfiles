@@ -152,8 +152,8 @@ bar {
 	status_command i3status -c ~/.config/i3status |/home/simon/bin/i3status_wrapper.py
 	bindsym button1 exec --no-startup-id gsimplecal
 	colors {
-		background #222222
-		statusline #eeeeee
+		background #adadad
+		statusline #383830
 		separator #666666
 		#                  border  backgr. text
 		focused_workspace  #4c7899 #285577 #ffffff
@@ -188,11 +188,11 @@ exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 # startup
 exec_always --no-startup-id feh --bg-scale /home/simon/Desktop/desktopbg.png
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id mate-volume-control-applet
-exec_always --no-startup-id blueman-applet
-exec_always --no-startup-id mate-settings-daemon
-exec_always --no-startup-id clipit
+exec --no-startup-id nm-applet
+exec --no-startup-id mate-volume-control-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id mate-settings-daemon
+exec --no-startup-id clipit
 exec --no-startup-id xset dpms 300
 exec --no-startup-id xautolock -time 5 -locker i3lock
 
