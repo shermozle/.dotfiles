@@ -202,4 +202,4 @@ bindsym $mod+x move workspace to output right
 
 # Lock screen
 
-bindsym $mod+l exec i3lock
+bindsym $mod+l exec i3lock -c 1e2838
