@@ -187,7 +187,7 @@ exec_always xmodmap -e "clear lock" #disable caps lock switch
 exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 # startup
-exec_always --no-startup-id feh --bg-scale /home/simon/Desktop/desktopbg.png
+exec_always --no-startup-id feh --bg-max /home/simon/Desktop/desktopbg.png
 exec --no-startup-id nm-applet
 exec --no-startup-id mate-volume-control-applet
 exec --no-startup-id blueman-applet
