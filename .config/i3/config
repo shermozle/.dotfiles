@@ -195,6 +195,7 @@ exec --no-startup-id mate-settings-daemon
 exec --no-startup-id clipit
 exec --no-startup-id xset dpms 300
 exec --no-startup-id xautolock -time 5 -locker i3lock
+exec --no-startup-id insync start
 
 # Move the current workspace to the next output
 # (effectively toggles when you only have two outputs)
