@@ -194,7 +194,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id mate-settings-daemon
 exec --no-startup-id clipit
 exec --no-startup-id xset dpms 300
-exec --no-startup-id xautolock -time 5 -locker i3lock
+exec --no-startup-id xautolock -time 5 -locker i3lock -c 000000 -i /tmp/himawari-8.png
 exec --no-startup-id insync start
 
 # Move the current workspace to the next output
@@ -203,4 +203,4 @@ bindsym $mod+x move workspace to output right
 
 # Lock screen
 
-bindsym $mod+l exec i3lock -c 1e2838
+bindsym $mod+l exec i3lock -c 000000 -i /tmp/himawari-8.png
