@@ -56,7 +56,7 @@ floating_modifier $mod
 hide_edge_borders smart
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/st
+bindsym $mod+Return exec /usr/bin/lxterm
 
 # start a web browser
 bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
@@ -65,9 +65,9 @@ bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
 bindsym $mod+Shift+q kill
 
 # rofi app and window launchers
-bindsym $mod+space exec rofi -show drun -theme regolith-theme
-bindsym $mod+Shift+space exec rofi -show run -theme regolith-theme
-bindsym $mod+Ctrl+space exec rofi -show window -theme regolith-theme
+bindsym $mod+space exec rofi -show drun -theme arthur
+bindsym $mod+Shift+space exec rofi -show run -theme arthur
+bindsym $mod+Ctrl+space exec rofi -show window -theme arthur
 
 # change focus
 bindsym $mod+Left focus left
@@ -97,9 +97,14 @@ bindsym $mod+BackSpace split toggle
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
 # change gaps interactively
-bindsym $mod+minus gaps inner current minus 6
-bindsym $mod+plus gaps inner current plus 6
+bindsym $mod+minus gaps inner current minus 2
+bindsym $mod+plus gaps inner current plus 2
 
 # show/hide keybindings
 bindsym $mod+Shift+question exec /usr/bin/conky-toggle.sh
@@ -177,12 +182,12 @@ bindsym $mod+Shift+s exec systemctl suspend
 
 # shortcuts for common system configuration tasks
 bindsym $mod+c exec gnome-control-center
-bindsym $mod+w exec gnome-control-center wifi
+#bindsym $mod+w exec gnome-control-center wifi
 bindsym $mod+b exec gnome-control-center bluetooth
 bindsym $mod+d exec gnome-control-center display
 bindsym $mod+n exec gnome-control-center network
 bindsym $mod+p exec gnome-control-center power
-bindsym $mod+s exec gnome-control-center sound
+#bindsym $mod+s exec gnome-control-center sound
 
 set $mod_def mode default; exec /home/simon/bin/i3_redscreen.sh off;
 set $exec_red_screen exec /home/simon/bin/i3_redscreen.sh on;
@@ -208,7 +213,7 @@ new_window pixel 1
 new_float pixel 1
 
 # Gaps (i3-gaps)
-gaps inner 5
+gaps inner 2
 gaps outer 0
 
 smart_gaps on
@@ -232,16 +237,16 @@ bar {
   status_command i3blocks
   tray_output primary
 
-  colors {
-      background $base03
-      statusline $base1
-      separator  $blue
-#                        BORDER  BACKGROUND TEXT
-      focused_workspace  $base02  $base02  $base2
-      active_workspace   $base02  $base02  $base01
-      inactive_workspace $base03  $base03  $base01
-      urgent_workspace   $red     $red     $base3
-  }
+    colors {
+        background $base03
+        statusline $base1
+        separator  $blue
+#                          BORDER  BACKGROUND TEXT
+        focused_workspace  $base02  $base02  $base2
+        active_workspace   $base02  $base02  $base01
+        inactive_workspace $base03  $base03  $base01
+        urgent_workspace   $red     $red     $base3
+    }
 }
 
 # Run other programs with i3
@@ -274,3 +279,16 @@ for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gsimplecal"] floating enable
 
 bindsym $mod+x move workspace to output right
+
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
