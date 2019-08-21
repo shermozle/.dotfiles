@@ -188,6 +188,8 @@ bindsym $mod+d exec gnome-control-center display
 bindsym $mod+n exec gnome-control-center network
 bindsym $mod+p exec gnome-control-center power
 #bindsym $mod+s exec gnome-control-center sound
+# Select active sound device
+bindsym $mod+a exec /home/simon/bin/pmenu
 
 set $mod_def mode default; exec /home/simon/bin/i3_redscreen.sh off;
 set $exec_red_screen exec /home/simon/bin/i3_redscreen.sh on;
@@ -269,6 +271,7 @@ exec --no-startup-id /usr/bin/unclutter -b
 exec_always --no-startup-id feh --bg-max /home/simon/Desktop/desktopbg.png
 exec --no-startup-id insync start
 exec --no-startup-id clipit
+exec --no-startup-id "mate-settings-daemon"
 
 # Disable capslock and make it escape
 exec_always xmodmap -e "clear lock" #disable caps lock switch
